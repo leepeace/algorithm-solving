@@ -1,5 +1,3 @@
-//package boj.p17070;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -60,14 +58,6 @@ public class Main {
 	 */
 	private static void solve(int row, int col, int nowType) {
 		if(row == N - 1 && col == N - 1) {
-			/*for (int i = 0; i < visited.length; i++) {
-				for (int j = 0; j < visited.length; j++) {
-					System.out.print(visited[i][j] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println();
-			System.out.println("-----------------");*/
 			result++;
 			return;
 		}
