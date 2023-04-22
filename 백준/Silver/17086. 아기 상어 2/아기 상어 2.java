@@ -57,8 +57,6 @@ public class Main {
 	
 
 	static void solve(int startX, int startY) {
-		boolean[][] visited = new boolean[N][M];
-		visited[startX][startY] = true;
 		
 		while(!queue.isEmpty()) {
 			int[] tmp = queue.poll();
@@ -74,7 +72,6 @@ public class Main {
 				//안전 거리가 기존 안전 거리보다 작으면 갱신  
 				if(depths[nextX][nextY] > depths[nowX][nowY] + 1) {
 					depths[nextX][nextY] = depths[nowX][nowY] + 1;
-					visited[nextX][nextY] = true;
 					queue.add(new int[] {nextX, nextY});	
 				}
 				
