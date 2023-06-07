@@ -4,11 +4,11 @@ class Solution {
     static int answer;
     
     public int solution(String begin, String target, String[] words) {
-        answer = Integer.MAX_VALUE;
+        answer = 0;
         
         search(0, begin, target, words, new boolean[words.length]);
         
-        answer = answer == Integer.MAX_VALUE ? 0 : answer;
+        //answer = answer == Integer.MAX_VALUE ? 0 : answer;
         
         return answer;
     }
@@ -17,7 +17,7 @@ class Solution {
                        String[] words, boolean[] visited){
         //target과 같을 때
         if(prev.equals(target)){
-            answer = Math.min(answer, cnt);
+            answer = cnt;
             return;
         }
         
