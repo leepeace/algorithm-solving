@@ -21,36 +21,37 @@ public class Main {
 		}
 		int X = Integer.parseInt(br.readLine());
 
-		int start = 0;
 		int result = 0;
 
-		// while (start < N){
-		// 	if(sum == X){
-		// 		result++;
-		// 	}
-		// 	if(sum > X || end == N){
-		// 		sum -= maps[start];
-		// 		start++;
-		// 	}else{
-		// 		sum += maps[end];
+		//1차 풀이
+		// for (int i = 0; i < N; i++) {
+		// 	int sum = 0;
+		// 	int end = i+1;
+		//
+		// 	while(end < N){
+		// 		sum = maps[i] + maps[end];
+		//
+		// 		if(sum == X){
+		// 			result++;
+		// 			break;
+		// 		}
 		// 		end++;
 		// 	}
 		// }
 
-		for (int i = 0; i < N; i++) {
-			int sum = 0;
-			int end = i+1;
+		Arrays.sort(maps);
+		int start = 0, end = N-1;
 
-			while(end < N){
-				sum = maps[i] + maps[end];
-
-				if(sum == X){
-					result++;
-					break;
-				}
-				end++;
+		while (start < end){
+			if(maps[start] + maps[end] == X){
+				start++;
+				end--;
+				result++;
+			}else if(maps[start] + maps[end] > X){
+				end--;
+			}else{
+				start++;
 			}
-
 		}
 
 
